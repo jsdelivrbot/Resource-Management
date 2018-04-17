@@ -1,0 +1,17 @@
+{
+  "name": "resourcemanagement",
+  "version": "1.0.0",
+  "description": "Resource Management",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Nagendra",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.15.2",
+    "express": "4.14.0",
+    "lodash": "4.17.5",
+    "mongoose": "5.0.10",
+    "morgan": "1.7.0"
+  }
+}
