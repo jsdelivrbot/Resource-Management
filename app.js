@@ -6,11 +6,11 @@ const path = require('path');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 
-const { authenticate } = require('./middleware/authenticate');
+// const { authenticate } = require('./middleware/authenticate');
 
-const signin = require('./routes/user/signin');
+// const signin = require('./routes/user/signin');
 
-const { job } = require('./utils/scheduler');
+// const { job } = require('./utils/scheduler');
 
 const app = express();
 
@@ -27,7 +27,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/api/user', authenticate, user);
+// app.use('/api/user', authenticate, user);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -1,20 +1,6 @@
 {
-  "test": {
-    "PORT": 4050,
-    "MONGODB_URI": "mongodb://localhost:27017/testServices",
-    "JWT_SECRET": "5ec63tw0rd!",
-    "MAIL_SERVER": "gmail",
-    "MAIL_USERNAME": "fleekaae@gmail.com",
-    "MAIL_PASSWORD": "Dubai@2017",
-    "IP_ADDRESS": "http://18.219.165.185:4050"
-  },
   "development": {
     "PORT": 5050,
-    "MONGODB_URI": "mongodb://fleeka:fleeka@ds227199.mlab.com:27199/fleeka",
-    "JWT_SECRET": "5ec63tw0rd!",
-    "MAIL_SERVER": "gmail",
-    "MAIL_USERNAME": "fleekaae@gmail.com",
-    "MAIL_PASSWORD": "Dubai@2017",
-    "IP_ADDRESS": "http://18.219.165.185:5050"
+    "MONGODB_URI": "mongodb://fleeka:fleeka@ds227199.mlab.com:27199/fleeka"
   }
 }
