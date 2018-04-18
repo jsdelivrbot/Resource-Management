@@ -1,0 +1,8 @@
+{
+  "name": "Resource Management Application",
+  "description": "This is a Resource Management Application",
+  "repository": "https://github.com/prakashmutyala07/Resource-Management.git",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["node", "express", "heroku"],
+  "image": "heroku/nodejs"
+}
