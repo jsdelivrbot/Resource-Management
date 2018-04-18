@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 // const { authenticate } = require('./middleware/authenticate');
 
 const manager = require('./routes/manager/manager');
+const project = require('./routes/project/project');
 
 // const { job } = require('./utils/scheduler');
 
@@ -28,6 +29,7 @@ app.use(function (req, res, next) {
 });
 
 app.use('/api/manager', manager);
+app.use('/api/project', project);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
