@@ -7,7 +7,8 @@ const managerSchema = new mongoose.Schema({
     },
     managerName: {
         type: String,
-        require: true
+        require: true,
+        lowercase: true
     }
 });
 

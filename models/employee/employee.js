@@ -9,11 +9,13 @@ const employeeSchema = new mongoose.Schema({
     },
     firstName: {
         type: String,
-        require: true
+        require: true,
+        lowercase: true
     },
     lastName : {
         type: String,
-        required: true
+        required: true,
+        lowercase: true
     },
     location: {
         type: String,
@@ -28,7 +30,12 @@ const employeeSchema = new mongoose.Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Project'
         }
-    ]
+    ],
+    employeeStatus: {
+        type: String,
+        enum: ['Active','InActive'],
+        default: 'Active'
+    }
 });
 
 const Employee = mongoose.model('Employee', employeeSchema);
