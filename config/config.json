@@ -1,6 +1,6 @@
 {
   "development": {
     "PORT": 5050,
-    "MONGODB_URI": "mongodb://fleeka:fleeka@ds227199.mlab.com:27199/fleeka"
+    "MONGODB_URI": "mongodb://admin:admin@ds247759.mlab.com:47759/resource-management"
   }
 }
