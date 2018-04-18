@@ -13,5 +13,12 @@
     "lodash": "4.17.5",
     "mongoose": "5.0.10",
     "morgan": "1.7.0"
+  },
+  "engines": {
+    "node": "8.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prakashmutyala07/Resource-Management.git"
   }
 }
