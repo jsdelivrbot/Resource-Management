@@ -54,6 +54,7 @@ router.delete('/', (req, res) => {
 router.put('/', (req, res) => {
     const body = _.pick(req.body, ['empId', 'firstName', 'lastName', 'location', 'age', '_projects']);
     Employee.findOneAndUpdate({ empId: req.body.empId, employeeStatus: CONSTANTS.active }, { $set: body }, { new: true })
+    .populate('_projects')
     .then(employee => {
         res.status(200).json({message: CONSTANTS.empUptdSuccess, employee: employee});
     }).catch(error => {
