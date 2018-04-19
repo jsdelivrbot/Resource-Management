@@ -9,13 +9,11 @@ const employeeSchema = new mongoose.Schema({
     },
     firstName: {
         type: String,
-        require: true,
-        lowercase: true
+        require: true
     },
     lastName : {
         type: String,
-        required: true,
-        lowercase: true
+        required: true
     },
     location: {
         type: String,

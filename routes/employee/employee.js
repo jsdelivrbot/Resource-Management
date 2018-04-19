@@ -32,15 +32,15 @@ router.get('/', (req, res) => {
     });
 });
 
-router.post('/search', (req, res) => {
-    Employee.find({$and:[{employeeStatus: CONSTANTS.active},{$or:[{firstName: _.toLower(req.body.fname) },{lastName: _.toLower(req.body.lname)}]}]})
-    .populate('_projects')
-    .then(employees => {
-        res.status(200).json(employees);
-    }).catch(error => {
-        res.status(400).json({ message: CONSTANTS.empGETFailed });
-    });
-});
+// router.post('/search', (req, res) => {
+//     Employee.find({$and:[{employeeStatus: CONSTANTS.active},{$or:[{firstName: _.toLower(req.body.fname) },{lastName: _.toLower(req.body.lname)}]}]})
+//     .populate('_projects')
+//     .then(employees => {
+//         res.status(200).json(employees);
+//     }).catch(error => {
+//         res.status(400).json({ message: CONSTANTS.empGETFailed });
+//     });
+// });
 
 router.delete('/', (req, res) => {
     Employee.findOneAndUpdate({ empId: req.body.empId, employeeStatus: CONSTANTS.active }, { $set: { employeeStatus: CONSTANTS.inactive } }, { new: true })
@@ -55,7 +55,7 @@ router.put('/', (req, res) => {
     const body = _.pick(req.body, ['empId', 'firstName', 'lastName', 'location', 'age', '_projects']);
     Employee.findOneAndUpdate({ empId: req.body.empId, employeeStatus: CONSTANTS.active }, { $set: body }, { new: true })
     .then(employee => {
-        res.status(200).json({message: CONSTANTS.empUptdSuccess});
+        res.status(200).json({message: CONSTANTS.empUptdSuccess, employee: employee});
     }).catch(error => {
         res.status(400).json({ message: CONSTANTS.empUptdFail });
     });
