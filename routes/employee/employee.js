@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
 // });
 
 router.delete('/', (req, res) => {
-    Employee.findOneAndUpdate({ empId: req.body.empId, employeeStatus: CONSTANTS.active }, { $set: { employeeStatus: CONSTANTS.inactive } }, { new: true })
+    Employee.findOneAndUpdate({ empId: req.query.empId, employeeStatus: CONSTANTS.active }, { $set: { employeeStatus: CONSTANTS.inactive } }, { new: true })
     .then(employee => {
         res.status(200).json({message: CONSTANTS.empDeleteSuccess});
     }).catch(error => {
