@@ -1,7 +1,5 @@
 var env = process.env.NODE_ENV || 'development';
 
-console.log('----------> ENV Value :: ', env)
-
 if (env === 'development') {
   var config = require('./config.json');
   var envConfig = config[env];
