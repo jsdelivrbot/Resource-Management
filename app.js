@@ -30,7 +30,7 @@ app.use('/api/employee', employee);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  let error = new Error('Not Found');
+  let error = new Error('Requested Resource is not avilable');
   error.status = 404;
   next(error);
 });
