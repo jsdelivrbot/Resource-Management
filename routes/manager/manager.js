@@ -6,6 +6,8 @@ const { CONSTANTS } = require('../../constants/constants');
 const { Manager } = require('../../models/manager/manager');
 const { checkForMgrExist } = require('../../middleware/validate');
 
+const db = require('../../database/oracleDB');
+
 
 router.post('/', checkForMgrExist, (req, res) => {
   let manager = new Manager(req.body);
@@ -17,10 +19,27 @@ router.post('/', checkForMgrExist, (req, res) => {
 });
 
 router.get('/', (req, res) => {
-  Manager.find({}).then(managers => {
-    res.status(200).json(managers);
-  }).catch(error => {
-    res.status(400).json({ message: CONSTANTS.mgrGETFailed });
+  // Manager.find({}).then(managers => {
+  //   res.status(200).json(managers);
+  // }).catch(error => {
+  //   res.status(400).json({ message: CONSTANTS.mgrGETFailed });
+  // });
+
+  db.then((connection) => {
+    connection.execute(
+      "SELECT * FROM TEST_NODE",
+      function (err, result) {
+        if (err) {
+          console.error(err.message);
+          // doRelease(connection);
+          return;
+        }
+        console.log('Resultss :: ', result.rows);
+        res.json({'success': result.rows})
+        // doRelease(connection);
+      });
+  }, (error) => {
+    console.log('Error While Connecting to DB');
   });
 });
 

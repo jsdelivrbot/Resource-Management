@@ -1,7 +1,10 @@
 {
   "development": {
     "PORT": 5050,
-    "MONGODB_URI": "mongodb://admin:admin@ds247759.mlab.com:47759/resource-management"
+    "user": "admin",
+    "password": "prokarma",
+    "connectString": "172.16.200.80:1521/dev11.prokarma.com",
+    "externalAuth": false
   },
   "production": {
     "MONGODB_URI": "mongodb://admin:admin@ds247759.mlab.com:47759/resource-management"
